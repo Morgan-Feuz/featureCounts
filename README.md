@@ -1,7 +1,7 @@
 # featureCounts Set-Up and Workflow
 
 ### Background 
-[featureCounts](https://subread.sourceforge.net/featureCounts.html) is a general-purpose read summarization program that counts mapped reads for genomic feature (e.g., genes, exons, promoter, gene bodies, genomic bins, chromosomal locations). It is frequently used to count both RNA-seq and genomic DNA-seq reads and is part of the complete [Subread package](https://subread.sourceforge.net/). 
+[featureCounts](https://subread.sourceforge.net/featureCounts.html) is a general-purpose read summarization program that counts mapped reads for genomic features (e.g., genes, exons, promoters, gene bodies, genomic bins, chromosomal locations). It is frequently used to count both RNA-seq and genomic DNA-seq reads and is part of the complete [Subread package](https://subread.sourceforge.net/). 
 
 ----------------------------------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ $ featureCounts
 
 -------------------------------------------------------------------------------------------------------
 ### Usage
-`featureCounts` takes as input SAM/BAM files and an annotation file including chromosomal coordinates of features. It outputs numbers of reads assigned to features (or meta-features). It also outputs stat info for the overall summrization results, including number of successfully assigned reads and number of reads that failed to be assigned due to various reasons (these reasons are included in the stat info). The annotation file should be in either [GTF format](https://genome.ucsc.edu/FAQ/FAQformat.html#format4) or a simplified annotation format (SAF). 
+`featureCounts` takes as input SAM/BAM files and a genome annotation file including chromosomal coordinates of features. It outputs numbers of reads assigned to features (or meta-features). It also outputs stat info for the overall summrization results, including number of successfully assigned reads and number of reads that failed to be assigned due to various reasons (these reasons are included in the stat info). The annotation file should be in either [GTF format](https://genome.ucsc.edu/FAQ/FAQformat.html#format4) or a simplified annotation format (SAF). 
 
 [Here](https://manpages.org/featurecounts) is a manual page listing featureCounts arguments. 
 
