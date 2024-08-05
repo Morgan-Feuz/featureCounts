@@ -60,10 +60,32 @@ $ cat featureCounts.txt| cut -f1,7 | less
 # create new cts file using Linux
 cat featureCounts.txt| cut -f1,7 > output.txt
 ```
+<br>
 
 
+<ins>Create a counts matrix using R:</ins>
+```r
+library(tidyverse)
+library(purrr)
+
+f_files <- list.files("/path/featureCountsFiles/", 
+                      pattern = "featureCounts.txt", full.names = TRUE)
+head(f_files)
+
+featureCounts <- function(file){
+  cnt <- read_tsv(file, col_names = TRUE, comment = "#")
+  cnt <- cnt %>% dplyr::select(-Chr, -Start, -End, -Strand, -Length)
+  return(cnt)
+}
+
+raw_counts <- map(f_files, featureCounts)
+raw_counts_df <- purrr::reduce(raw_counts, inner_join)
+
+write.csv(raw_counts_df,"/path/mergedfeatureCounts.csv",
+          row.names = FALSE)
 
 
+```
 
 
 
